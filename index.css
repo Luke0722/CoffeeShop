@@ -35,8 +35,15 @@ main>.content{
     justify-content:flex-end;
     margin:10px 0px; 
 }
-.editbt{
+.editbut{
     margin:0px 0px 0px 10px;
+}
+.editbut>button{
+    background: darkslategray ;
+    color:white;
+    padding:15px 35px;
+    border:none;
+    border-radius: 20px;
 }
 .content>.Row{
     flex:none;
@@ -48,24 +55,12 @@ main>.content{
 }
 .Row>.sell{
     flex:none;/*並排：不能夠彈性縮放*/
-    margin:60px;
+    margin:50px;
     width:20%;
-   
 }
 
-.smallpic{
-    max-width: 150px;
-    max-height: 150px;
-}
-.pic{
-    width:100%;
-    border:2.5px solid lightblue;
-}
-/*form有關*/
-
-.lisubmit{
+.center{
     text-align: center;
-    
 }
 .content>.menuform{
     width:33%;
@@ -83,56 +78,75 @@ fieldset {
     border:1px darkgray solid;
     border-radius: 10px;
 }
-/*僅限label*/
 fieldset label{
     font-size:20px;
 } 
-/*僅限input,select*/
 fieldset input,select{
     font-size:16px; 
     padding:2px 5px;
     border:1px lightgray solid;
     border-radius:2px;
 } 
-.menufieldset input,select{
-    width:90%;
-    height:25px;
-}
-
+/*---login.php---*/
 .menufieldset ul{
      /*ul預設就有margin*/
     padding: 25px;
 }
-.introfieldset ul{
-    padding: 10px;
-    border-bottom:1px black solid;
+.menufieldset input,select{
+    width:90%;
+    height:25px;
 }
 .menufieldset li {
-    list-style: none;
-    line-height: 24px;
     margin: 10px 0px;
 }
+/*---aintro.php---*/
+.introfieldset ul{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height:120px;
+    padding: 10px;
+    border-bottom:1px black solid;
+    flex-wrap: wrap;
+}
 .introfieldset li {
-    list-style: none;
-    min-width:150px;
-    display:inline-block; 
+    flex:none;
+    display: flex;
+    width:20%;
+    height:50%;
     margin: 10px 15px;
 }
-.introfieldset input{
-    padding:0px 5px;
-    width:100px;
+.introfieldset  li>img{
+    flex:none;
+    width:auto;
+    max-height:100px;
+}
+.introfieldset li>input{
+    flex:1;
+    width:90%;
     height: 25px;
     border-radius:2px;
     border:1px lightgray solid;
 }
-.introfieldset textarea{
-    padding:0px 5px;
-    width:300px;
+.introfieldset li> textarea{
+    flex:1;
+    width:90%;
     height:100px;
+    padding:0px 5px;
     border-radius:2px;
     border:1px lightgray solid;
 }
-
+#btform{
+    display:inline-block;
+    width:100px;
+    height:40px;
+    margin:20px 0px 0px 0px;
+    border:0px;
+    border-radius: 10px ;
+    line-height: 40px;
+    color:white;
+    background:darkcyan;
+}
 /*index.html*/
 .btindex{
     font-size: 14px;
@@ -141,7 +155,7 @@ fieldset input,select{
     padding:15px 35px;
     border:none;
 }
-/*about.html*/
+/*intro.html*/
 .Row>.introphoto{
     flex:none;/*並排：不能夠彈性縮放*/
     margin:0px 60px;
@@ -152,10 +166,7 @@ fieldset input,select{
     flex:none;/*並排：不能夠彈性縮放*/
     margin:60px;
     width:35%;
-  
 }
-
-
 /*menu.html*/
 .content>.title{
     flex:auto;
@@ -181,8 +192,7 @@ fieldset input,select{
     margin:20px;
     width:15%;
 }
-
-/*edit.php*/
+/*aedit.php*/
 .crud{
     margin-bottom:10px;
 }
@@ -192,7 +202,6 @@ fieldset input,select{
     font-size: 16px;
     padding:2px 8px;  
     margin-right:10px;
-    /*這邊用margin 垂直的沒有作用why?*/   
 }
 #success{
     border-radius: 10px;
@@ -201,9 +210,6 @@ fieldset input,select{
     padding:0px 10px;
 }
 @media screen and (max-width:550px){
-    .Row>.sell{
-        width:90%;
-    }
     .Row>.introphoto{
         width:90%;
         margin:0px 20px;
@@ -213,16 +219,24 @@ fieldset input,select{
         margin:20px;
     }
     .content>.menuform{
-        width:90%;
+        width:100%;
     }
     .menuRow>.sell{
         width:24%;
     }
 }
-
 @media screen and (max-width:850px){
+    main>.content{
+        margin:10px 10px 50px 10px;
+    }
     .Row>.sell{
+        margin:70px 3px;
+        width:30%;
+    }
+    .pic{
+        margin:15px 0px;
         width:90%;
+        border:2.5px solid lightblue;
     }
     .Row>.introphoto{
         width:90%;
@@ -240,11 +254,12 @@ fieldset input,select{
     h3{
         font-size:16px;
     }
-    .introfieldset li {
-        margin:5px;
-        min-width: 450px;
-    }
+
     .menuRow>.sell{
         width:32%;
+    }
+    .introfieldset li {
+        width:85%;
+       
     }
 }

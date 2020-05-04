@@ -55,7 +55,7 @@
                                 echo '</ul>';                   
                             }
                         ?>
-                        <input type="submit" name="submit" id="btsubmit" value="確定修改" >
+                        <input type="submit" name="submit" id="btform" value="確定修改" >
                     </fieldset>
                 </form>
             </div>

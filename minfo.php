@@ -36,15 +36,14 @@
                         ?>
                             <h3>會員資料</h3>
                             <li><label>會員姓名：</label></li>
-                            <li><input type="text" name="username" value=" <?php echo $user_data['name'] ?>" required></li>
+                            <li><input type="text" name="username" value="<?php echo $user_data['name'] ?>" required></li>
                             <li><label>E-mail：</label></li>
-                            <li><input type="text" name="email" value=" <?php echo $user_data['email'] ?>" required></li>
+                            <li><input type="text" name="email" value="<?php echo $user_data['email'] ?>" required></li>
                             <li><label>電話：</label></li>
-                            <li><input type="text" name="phone" value=" <?php echo $user_data['phone'] ?>" ></li>
+                            <li><input type="text" name="phone" value="<?php echo $user_data['phone'] ?>" ></li>
                             <li><label>通訊地址：</label></li>
-                            <li><input type="text" name="address" value=" <?php echo $user_data['address'] ?>" ></li>
-                            
-                            <li><input type="submit" name="submit" id="btsubmit" value="確定修改" ><li>
+                            <li><input type="text" name="address" value="<?php echo $user_data['address'] ?>" ></li>   
+                            <li class="center"><input type="submit" name="submit" id="btform" value="確定修改" ><li>
                         </ul>          
                     </fieldset>
                 </form>

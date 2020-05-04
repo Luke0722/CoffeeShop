@@ -1,25 +1,8 @@
-/*---GLOBAL---*/
-body{
-    margin: 0px;
-    overflow-x:hidden;
-    font-family: "Microsoft JhengHei", 微軟正黑體;
-}
-button{
-    font-size:16px;
-}
-a{
-    /*連結前面不要有底線 */
-    text-decoration: none;
-}
-li{
-    /*連結前面不要有底線 */
-    list-style: none;
-}
 /*---ASIDE---*/
 aside{
     display: inline-flex; /*並排*/
     width:15%;
-    height:400px;
+    height:auto;
 }
 aside a{
     font-size:16px;
@@ -47,36 +30,44 @@ main{
     display: inline-flex; /*並排*/
     justify-content:flex-start;
     flex-flow:wrap;
-    width:70%;
+    width:80%;
     height:auto;
 }
-/*fieldset本來就有border*/
 main>.member{
     flex:none;
-    display: flex;
+    display:flex;
     width:100%;
-    padding:40px;
-   
+    margin:30px 0px;
 }
-.memberform{
+.member>.memberform{
     flex:none;
+    display:flex;
     width:100%;
+    justify-content:center; /*置中*/
+    margin:0px;             /*form有預設margin*/
 }
-.memberfieldset { 
-    background:rgb(253, 246, 150);
-    width:60%;
+.memberform>.memberfieldset { 
+    flex:none;
+    width:70%;
     padding:15px;
-    border:none;
-    justify-content:flex-start;
-    
+    border:3px lightgrey solid;
+    border-radius: 25px;
+    font-size:18px;
 }
-/*label*/
-.memberfieldset label{
-    font-size:16px;
-} 
 .memberfieldset li{
     margin:15px;
 } 
+#btform{
+    display:inline-block;
+    width:100px;
+    height:40px;
+    margin:20px 0px 0px 0px;
+    border:0px;
+    border-radius: 10px ;
+    line-height: 40px;
+    color:white;
+    background:darkcyan;
+}
 /*input,select*/
 fieldset input,select{
     width:300px;
@@ -85,4 +76,15 @@ fieldset input,select{
     border:1px lightgray solid;
     border-radius:2px;
 } 
+@media screen and (max-width:850px){
+    main{
+        width:100%;
+    }
+    aside{
+        display: none; /*並排*/
+    }
+    .memberfieldset {
+        width:85%;
+    }
+}
 

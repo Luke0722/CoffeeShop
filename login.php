@@ -73,10 +73,10 @@
                             <li><input type="password" name="password" placeholder="請輸入密碼"></li>
                             <li><label for="check"> 驗證碼：<?php echo $n1."+".$n2; ?></label></li>
                             <li><input type="text" name="checkcode" autocomplete="off"></li>
-                            <li class="lisubmit"><input type="submit" name="submit" id="btsubmit" value="Login"></li>
+                            <li class="center"><input type="submit" name="submit" id="btform" value="Login"></li>
+                            <li class="center"><a href="register.php" id="btform">Register</a></li>
                             <!--表單送出時，原本的驗證碼答案一併送出，排除驗證碼不同步問題-->
                             <li><input type="hidden" name="answer"  value="<?php echo $n1+$n2;?>"></li>
-                            <li><a href="register.php" id="registerbt">註冊帳號</a></li>
                         </ul>
                     </fieldset>
                 </form>

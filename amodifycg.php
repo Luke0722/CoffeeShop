@@ -47,7 +47,7 @@
                         <ul>
                             <li ><label for="name"> 種類名稱: </label></li>
                             <li ><input type="text" name="cname" value="<?php echo $category[1]; ?>"></li>
-                            <li class="lisubmit"><input type="submit" name="submit" id="btsubmit" value="修改種類" ></li>
+                            <li class="center"><input type="submit" name="submit" id="btform" value="修改種類" ></li>
                         </ul>
                     </fieldset>
                 </form>

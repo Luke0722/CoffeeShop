@@ -69,7 +69,7 @@
                             <li><input required type="number" name="phone" autocomplete="off" ></li>
                             <li><label for="address">通訊地址:</label></li>
                             <li><input required type="text" name="address" autocomplete="off" ></li>
-                            <li class="lisubmit"><input type="submit" name="submit" id="btsubmit" value="Register"></li>
+                            <li class="center"><input type="submit" name="submit" id="btform" value="Register"></li>
                         </ul>
                     </fieldset>
                 </form>

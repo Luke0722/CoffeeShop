@@ -63,7 +63,7 @@
                             </select></li>
                             <li ><label for="upfile">檔案上傳:</label></li>
                             <li ><input type="file" name="upfile" required > </li>
-                            <li class="lisubmit"><input type="submit" name="submit" id="btsubmit" value="新增商品" ></li>
+                            <li class="center"><input type="submit" name="submit" id="btform" value="新增商品" ></li>
                         </ul>
                     </fieldset>
                 </form>

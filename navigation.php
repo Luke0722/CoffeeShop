@@ -8,7 +8,7 @@
     <div class="navheader">
         <div class="nav-logo"><a href="index.php">米羅咖啡</a></div>
         <div class="nav-bar" >
-            <ul class="navbar-nav">
+            <ul class="nav-bar-ul">
                 <?php  if(isset($_SESSION['user_authority'])&&$_SESSION['user_authority']==1): ?>
                     <li><a href="ainfo.php"> 商店資訊管理 </a></li>
                     <li><a href="aedit.php"> 商品管理 </a></li>
@@ -17,7 +17,7 @@
                     <li><a href="index.php"> 首頁 </a></li>
                     <li><a href="intro.php"> 經營理念 </a></li>
                     <li><a href="menu.php"> 飲料品項 </a></li>
-                    <li class ="drop-btn"> 會員中心 
+                    <li class ="dropdown-li"> 會員中心 
                         <ul class ="drop-menu">
                             <li><a href="minfo.php">會員資料</a></li>
                             <li><a href="mnews.php">會員消息</a></li>

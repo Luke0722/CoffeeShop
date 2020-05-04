@@ -67,7 +67,7 @@
                             <li ><label for="upfile">檔案上傳:</label></li>
                             <li ><img src="<?php echo $menu["tpic"]; ?>" class="smallpic"></li>
                             <li ><input type="file" name="upfile"> </li>
-                            <li class="lisubmit"><input type="submit" name="submit" id="btsubmit" value="修改商品" ></li>
+                            <li class="center"><input type="submit" name="submit" id="btform" value="修改商品" ></li>
                         </ul>        
                     </fieldset>
                 </form>
