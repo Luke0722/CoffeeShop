@@ -23,6 +23,7 @@
             $sql = "INSERT INTO `users` (`email`,`password`,`name`,`phone`,`address`,`authority`) 
                     VALUES ('$email','$password','$name','$phone','$address','0');"; //新增資料
             mysqli_query($db_link,$sql); //寫入資料庫
+            echo '<meta http-equiv=REFRESH CONTENT=0;url=login.php>'; 
         }
         else{
             $error_message="密碼不相符";

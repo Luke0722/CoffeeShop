@@ -85,11 +85,10 @@ nav>.navheader{
     position: relative;
     padding:20px;
 }
-.dropdown-li:hover >.drop-menu {
-    display: flex;
-    border:black 1px solid;
+.dropdown-li:hover  {
+    color:white;
 }
-.drop-menu {
+#drop-menu{
     display: none;
     flex-direction: column;
     position: absolute;
@@ -99,16 +98,17 @@ nav>.navheader{
     padding:0px;
     border:black 1px solid;
     background-color: rgb(103, 108, 112);
+    border:black 1px solid;
 }
-.drop-menu li {
+#drop-menu li {
     flex:none;
     border-top:1px solid gray;
 }
-.drop-menu li a{
+#drop-menu li a{
     padding:20px 0px;
     color:white
 }
-.drop-menu li a:hover{
+#drop-menu li a:hover{
     background-color: rgb(211, 214, 216);
 }
 /*---NAV COVER---*/

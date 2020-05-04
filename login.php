@@ -29,7 +29,7 @@
                     $_SESSION['user_name'] = $user_data['name'];
                     $_SESSION['user_authority'] = $user_data['authority'];   
                     if($user_data['authority']==0)                 
-                        echo '<meta http-equiv=REFRESH CONTENT=0;url=minfo.php>'; 
+                        echo '<meta http-equiv=REFRESH CONTENT=0;url=index.php>'; 
                     else  if($user_data['authority']==1)                 
                         echo '<meta http-equiv=REFRESH CONTENT=0;url=ainfo.php>';      
                 }
