@@ -16,7 +16,8 @@ This is a coffee shop website using HTML, CSS, Javascript DOM, PHP, MySQL, Flex(
 #### 會員系統
 
 * 管理員登入
-* 會員註冊、登入
+* 會員註冊、登入：使用 session 判斷會員登入狀態
+* 密碼：經過 password_hash( ) 處理存入資料庫，透過password_verify( )比對
 
 #### 管理員功能
 * 商品管理：商品的CRUD(新增、讀取、更新、刪除)、商品種類的CRUD
