@@ -2,18 +2,21 @@
     //資料庫+資料表連線---------------------------------------------------------------
     header("Content-Type:text/html;charset=utf-8");
     include("connMysql.php");           //連線資料庫、選擇資料庫
-    //驗證碼亂數
-    $n1 = rand(1, 50);
-    $n2 = rand(1, 50);
     //錯誤訊息變數  
     $error_message="";
-
     //判斷post過來的資料是否被提交過來(isset方法--檢測變數是否設定) 
     if(isset($_POST['submit'])){
-        $answer = $_POST['answer'];         //正確驗證碼答案
-        $checkcode = $_POST['checkcode'];   //使用者輸入答案
-        //驗證碼認證
-        if($answer == $checkcode){
+        //接收到使用者端的金鑰   
+        $captcha=$_POST['g-recaptcha-response'];
+        //伺服器端的金鑰                     
+        $secretKey = "6LcZTPsUAAAAAHjgYc5HSs-lMcsKKwHjzZvRs-Gg";
+        $ip = $_SERVER['REMOTE_ADDR'];
+        // post request to server
+        $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
+        $response = file_get_contents($url);
+        $responseKeys = json_decode($response,true);
+        // should return JSON with success as true
+        if($responseKeys["success"]) {
             $email =  $_POST['email'];
             $password =  $_POST['password']; 
             //確認有此會員信箱
@@ -39,9 +42,9 @@
             else
             $error_message="帳號或密碼錯誤"; //顯示錯誤提示
         }
-        //驗證碼輸入錯誤
+        //代表不是真實的使用者
         else{
-            $error_message="驗證碼錯誤"; //顯示錯誤提示
+            $error_message="請勿使用程式來登入"; //顯示錯誤提示
         }
     }  
 ?>
@@ -54,6 +57,19 @@
         <title>米羅咖啡</title>
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="general.css"> <!--各頁面通用CSS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("form[name=login]").submit(function(ev){
+                    if(grecaptcha.getResponse()!=""){
+                        return true;
+                    }
+                    alert("請勾選 我不是機器人");
+                    return false;
+                });
+            });   
+         </script>
     </head>
     <body> 
         <!--nav-bar-->
@@ -61,7 +77,7 @@
         <main>
             <!--頁面內容-->
             <div class="content">
-                <form class="menuform" method="post"  action=""> 
+                <form name ="login" class="menuform" method="post"  action=""> 
                     <fieldset class = "menufieldset">
                         <ul>
                             <!--顯示錯誤提示-->
@@ -71,12 +87,10 @@
                             <li><input type="mail" name="email" placeholder="請輸入帳號" autocomplete="off"></li>
                             <li><label for="password"> 密碼: </label></li>
                             <li><input type="password" name="password" placeholder="請輸入密碼"></li>
-                            <li><label for="check"> 驗證碼：<?php echo $n1."+".$n2; ?></label></li>
-                            <li><input type="text" name="checkcode" autocomplete="off"></li>
+                            <li class="center"><div class="g-recaptcha" data-sitekey="6LcZTPsUAAAAAKjPMn7ByXht4JohslELnkgLrFxu"></div></li>
                             <li class="center"><input type="submit" name="submit" id="btform" value="Login"></li>
                             <li class="center"><a href="register.php" id="btform">Register</a></li>
-                            <!--表單送出時，原本的驗證碼答案一併送出，排除驗證碼不同步問題-->
-                            <li><input type="hidden" name="answer"  value="<?php echo $n1+$n2;?>"></li>
+                            <!--表單送出時，原本的驗證碼答案一併送出，排除驗證碼不同步問題-->   
                         </ul>
                     </fieldset>
                 </form>
