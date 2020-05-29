@@ -44,7 +44,7 @@
                 <div class="editbut">
                     <button onclick="BacktoEdit()" >返回編輯</button>
                 </div>
-                <form class="menuform"  enctype="multipart/form-data" method="post" action=""> 
+                <form  id="loginform" class="menuform"  enctype="multipart/form-data" method="post" action=""> 
                     <fieldset class = "menufieldset">
                         <ul>
                             <li><label for="name">品項名稱:</label></li>

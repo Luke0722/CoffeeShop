@@ -77,7 +77,7 @@
         <main>
             <!--頁面內容-->
             <div class="content">
-                <form name ="login" class="menuform" method="post"  action=""> 
+                <form name ="login" id="loginform" class="menuform" method="post"  action=""> 
                     <fieldset class = "menufieldset">
                         <ul>
                             <!--顯示錯誤提示-->
@@ -87,7 +87,7 @@
                             <li><input type="mail" name="email" placeholder="請輸入帳號" autocomplete="off"></li>
                             <li><label for="password"> 密碼: </label></li>
                             <li><input type="password" name="password" placeholder="請輸入密碼"></li>
-                            <li class="center"><div class="g-recaptcha" data-sitekey="6LcZTPsUAAAAAKjPMn7ByXht4JohslELnkgLrFxu"></div></li>
+                            <li class="center"><div class="g-recaptcha"  data-sitekey="6LcZTPsUAAAAAKjPMn7ByXht4JohslELnkgLrFxu"></div></li>
                             <li class="center"><input type="submit" name="submit" id="btform" value="Login"></li>
                             <li class="center"><a href="register.php" id="btform">Register</a></li>
                             <!--表單送出時，原本的驗證碼答案一併送出，排除驗證碼不同步問題-->   

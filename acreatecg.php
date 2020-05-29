@@ -36,16 +36,14 @@
         </script>
     </head>
     <body>  
-        <!--nav-bar-->
-        <?php include("navigation.php");?> 
         <main>
             <!--頁面內容-->
             <div class="content">
                 <div class="editbut">
                     <button onclick="BacktoEdit()" >返回編輯</button>
                 </div>
-                <form class="menuform" method="post"  action=""> 
-                    <fieldset class = "menufieldset">
+                <form id="loginform" class="menuform" method="post"  action=""> 
+                    <fieldset  class = "menufieldset">
                         <ul>   
                             <?php if($message!="")
                                 echo '<li ><label for="result" id="success">'.$message.'</label></li>'

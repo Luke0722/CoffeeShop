@@ -54,7 +54,7 @@
                 <div class="editbut">
                     <button onclick="BacktoLogin()" >返回登入</button>
                 </div>
-                <form class= "menuform" method="post"  action=""> 
+                <form id="registerform" class= "menuform" method="post"  action=""> 
                     <fieldset class = "menufieldset">
                         <ul>
                             <li><label for="error" id="error"><?php echo $error_message; ?></label></li>

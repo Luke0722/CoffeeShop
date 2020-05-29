@@ -58,23 +58,30 @@ main>.content{
     margin:50px;
     width:20%;
 }
-
 .center{
     text-align: center;
 }
+/*--------------------form------------------*/
 .content>.menuform{
-    width:33%;
+    flex:none;
+    display:flex;
+    justify-content: center;
 }
 .content>.introform{
     font-size:20px;
     width:90%;
-    border:1px darkgray solid;
     border-radius: 10px;
 }
-
+#registerform{
+    width:80%;
+}
+#loginform{
+    width:33%;
+}
 /*--------------------fieldset------------------*/
 /*fieldset本來就有border*/
 fieldset { 
+    width:90%;
     border:1px darkgray solid;
     border-radius: 10px;
 }
@@ -160,7 +167,6 @@ fieldset input,select{
     flex:none;/*並排：不能夠彈性縮放*/
     margin:0px 60px;
     width:35%;
-   
 }
 .Row>.introtext{
     flex:none;/*並排：不能夠彈性縮放*/
@@ -210,6 +216,12 @@ fieldset input,select{
     padding:0px 10px;
 }
 @media screen and (max-width:550px){
+    .g-recaptcha {
+        margin: 0 auto;
+        display: table;
+        transform:scale(0.9);
+        -webkit-transform:scale(0.9);  
+    }
     .Row>.introphoto{
         width:90%;
         margin:0px 20px;
@@ -217,9 +229,6 @@ fieldset input,select{
     .Row>.introtext{
         width:90%;
         margin:20px;
-    }
-    .content>.menuform{
-        width:100%;
     }
     .menuRow>.sell{
         width:24%;
@@ -244,7 +253,10 @@ fieldset input,select{
     .Row>.introtext{
         width:90%;
     }
-    .content>.menuform{
+    #registerform{
+        width:100%;
+    }
+    #loginform{
         width:70%;
     }
     .smallpic{
@@ -254,12 +266,10 @@ fieldset input,select{
     h3{
         font-size:16px;
     }
-
     .menuRow>.sell{
         width:32%;
     }
     .introfieldset li {
         width:85%;
-       
     }
 }
